@@ -34,46 +34,30 @@ Program to implement the given logic function using NAND and NOR gates and to ve
 Developed by: Karthikeyan R
 RegisterNumber:  22009322
 */
-Using NAND operation:
+```
+Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming. PROGRAM USING NAND:
 
-module combine1(A,B,C,D,F);
+module expfourone(a,b,c,d,f); input a,b,c,d; output f; wire f1,f2,f3; assign f1 = (~c&~b&~a); assign f2 = (~d&~c&a); assign f3 = (c&(~b)&~a); assign f= f1&~f2&~f3; endmodule PROGRAM USING NOR:
 
-input A,B,C,D;
+module expfourtwo(a,b,c,d,f); input a,b,c,d; output f; wire f1,f2,f3,f4; assign f1 = c&(~b)&a; assign f2 = d&(~c)&a; assign f3 = c&(~b)&a; assign f4 = ~(f1|f2|f3); not(f,f4); endmodule
 
-output F;
-wire P,Q,R;
-assign P = C&(~B)&(~A);
-assign Q = D&(~C)&(~A);
-assign R = (~C)&B&(~A);
-assign F = (~P&~Q&~R);
-endmodule
+```
+# output
 
-Using NOR operation:
-
-module combine2(A,B,C,D,F);
-input A,B,C,D;
-output F;
-wire P,Q,R,S;
-assign P = C&(~B)&A;
-assign Q = D&(~C)&A;
-assign R = C&(~B)&A;
-assign S = ~(P|Q|R);
-assign F = ~S;
-endmodule
-## RTL realization
-NAND
-![output](./RTL.png)
-NOR
-![output](./norRTL.png)
-## Output:
-NAND
-![output](./nandtable.png)
-NOR
-![output](./nortable.png)
-## Timing Diagram
-NAND
-![output](./nandtiming.png)
-NOR
-![output](./nortiming.png)
+# RTL
+Using NAND
+![output](./214619120-69d786bd-dd1e-4ec5-ae70-c4a525e94831.png)
+Using NOR
+![output](./214619572-532c083b-60fe-4c0d-82d5-d8323f17c64a.png)
+# Truthtable
+Using NAND
+![output](./214619929-c9460972-beb8-426c-a575-97af8203ee16.png)
+Using NOR
+![output](./214620154-9e2fd44d-c5c1-48b9-8a0a-3bc78630c400.png)
+# Timing Diagram
+Using NAND
+![output](./214620412-2bd16e60-a483-4f45-bc4c-382b1cdfa5f7.png)
+Using NOR
+![output](./214620765-8cfbb081-5b68-4504-b4b7-d91a1f68060d.png)
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
